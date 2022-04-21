@@ -31,15 +31,39 @@ let inputService=document.getElementById("selService");
 let inputOwner=document.getElementById("txtOwner");
 let inputPhone=document.getElementById("txtPhone");
 
+function isValid(aPet){
+    //return false value when the pet is not valid
+    //return true if the pet is valid
+    let valid=true;
+    if(aPet.name.length==0){
+        //if we get here it means that the name is not valid
+        valid=false;
+        console.log("Invalid name");
+    }
+    
+    return valid;
+}
 
 function register(){
     //create the pet
     let thePet = new Pet(inputName.value,inputAge.value,inputGender.value,inputBreed.value,inputService.value,inputOwner.value,inputPhone.value);
-    console.log(thePet);
+    if(isValid(thePet)==true){
     //push the pet info into array
     petSalon.pets.push(thePet);
-
+    displayCards();
+    clearInputs();
+    }
     
+}
+
+function clearInputs(){
+    inputName.value="";
+    inputAge.value="";
+    inputBreed.value="";
+    inputGender.value="";
+    inputService.value="";
+    inputOwner.value="";
+    inputPhone.value="";
 }
 
 let Shaggy= new Pet("Shaggy",3,"Male","Labrador","Grooming","Ben","6365281245");
