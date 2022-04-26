@@ -109,12 +109,19 @@ function searchPet(){
         }else{
             document.getElementById(pet.id).classList.remove("highlight");
         }
+
+        if(searchString === pet.name){
+            alert("I found it");
+            document.getElementById(pet.id).classList.add("highlight");
+        }else{
+            document.getElementById(pet.id).classList.remove("highlight");
+        }
     }
 }
 
-let Shaggy= new Pet("Shaggy",3,"Male","Labrador","Grooming","Ben","6365281245");
-let Marley= new Pet("Marley",5,"Female","Golden Retriever","Nails Cutting","Dave","3144625099");
-let Buddy= new Pet("Buddy",4,"Female","Pitbull","Teeth cleaning","Zach","6606806060");
+let Shaggy= new Pet("Shaggy",3,"Male","Labrador","Grooming","Ben","6365281245","none");
+let Marley= new Pet("Marley",5,"Female","Golden Retriever","Nails Cutting","Dave","3144625099","none");
+let Buddy= new Pet("Buddy",4,"Female","Pitbull","Teeth cleaning","Zach","6606806060","none");
 petSalon.pets.push(Shaggy,Marley,Buddy);
 console.log(Shaggy,Marley,Buddy);
 console.log(petSalon);

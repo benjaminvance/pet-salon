@@ -15,8 +15,8 @@ function displayCards(){
     for(let i=0;i<petSalon.pets.length;i++){
         let pet = petSalon.pets[i];
         tmp+=`
-        <div id="${pet.id}" class="pet">
-            <div class="pet-header">
+        <div id="${pet.id}" class="pet container">
+                <div class="pet-header">
                 <h4>${pet.name}</h4>
                 <button onclick="deletePet(${pet.id});">🗑️</button>
             </div>
@@ -28,7 +28,7 @@ function displayCards(){
             <p>${pet.contactPhone}</p>
             <p>${pet.comments}</p>
             </div>
-        `;
+            `;
     }
     document.getElementById("pets").innerHTML=tmp;
 }
